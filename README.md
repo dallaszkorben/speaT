@@ -40,7 +40,7 @@ Here I show which models worked for me: ❌tiny, ✅base, ✅small, ❌medium, �
 (env) $ rec -r 44100 -c 1 -b 16 ./sounds/output.wav silence 1 0.1 5% 1 1.2 10%
 
 # now translate your recorded voice
-(env) $ whisper ./sounds/output.wav --language en --model small --output_dir ./whispers | grep -oP "(?<\[.{23}\]  ).+"
+(env) $ whisper ./sounds/output.wav --language en --model small --output_dir ./whispers | grep -oP "(?<=\[.{23}\]  ).+"
 ```
 You can see the translated text on your screen.
 
@@ -48,3 +48,18 @@ Just for the record about rec. You can run it continuously, it will stop recordi
 ```sh
 (env) $ rec -r 44100 -c 1 -b 16 ./sounds/output.wav silence 1 0.1 5% 1 1.2 10% : newfile : restart
 ```
+
+### Test speaT console version
+```sh
+(env) $ ./speaT.sh
+```
+After you started the application, you can see a timer running on the left side of the screen.
+It is waiting for your voice in the microphone. If you start to talk, a horizontal gauge will indicate that it received it.
+Record will stop if the first stop condition is met:
+- stop to talk for 1.5 seconds (configurable)
+- talk is longer than 10 seconds
+After the record stopped, the Whisper tries to translate the generated audio file. It takes about 20 seconds. The translated text will appear on your screen, and the application goes back to listen to you.
+<image src="https://github.com/user-attachments/assets/a8351875-b2eb-49fd-a6c6-f218a89fcd24" height="200">
+
+
+
