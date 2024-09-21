@@ -15,7 +15,7 @@ $ source env/bin/activate
 
 ### Install some other apps
 ```sh
-(env) $ sudo apt-get install sax
+(env) $ sudo apt-get install sox
 ```
 
 ### Install Whisper
@@ -44,7 +44,7 @@ Here I show which models worked for me: ❌tiny, ✅base, ✅small, ❌medium, �
 ```
 You can see the translated text on your screen.
 
-Just for the record about rec. You can run it continuously, it will stop recording after the silent time limit was reached and then it starts a new record with a new file:
+Just for the record about `rec`. You can run it continuously, it will stop recording after the silent time limit was reached and then it starts a new record with a new file:
 ```sh
 (env) $ rec -r 44100 -c 1 -b 16 ./sounds/output.wav silence 1 0.1 5% 1 1.2 10% : newfile : restart
 ```
