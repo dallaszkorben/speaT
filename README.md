@@ -64,3 +64,13 @@ Record will stop if the first stop condition is met:
 After the record stopped, the Whisper tries to translate the generated audio file. It takes about 20 seconds. The translated text will appear on your screen, and the application goes back to listen to you.
 <image src="https://github.com/user-attachments/assets/77663fff-7c01-44a7-a406-f27e4adb4b85" width="500">
 
+### Configure the shell script
+- `LANGUAGE_CODE`    
+  the language code, you will speak. It can be for example `en`, `sv` ...  
+  default value: `en`
+- `LANGUAGE_MODEL`  
+  the language model, you want to use for speak to text
+  default value: `small`
+- `TIME_LIMIT`
+  the max length of the recorded audio file in seconds  
+  default value: `10`
