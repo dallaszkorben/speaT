@@ -64,6 +64,12 @@ Record will stop if the first stop condition is met:
 After the record stopped, the Whisper tries to translate the generated audio file. It takes about 20 seconds. The translated text will appear on your screen, and the application goes back to listen to you.
 <image src="https://github.com/user-attachments/assets/77663fff-7c01-44a7-a406-f27e4adb4b85" width="500">
 
+```sh
+(env) $ ./speaT.sh 2>/div/null
+```
+If you redirect all error outputs to the /dev/null and you have already redirected all information messages to the error output in the shell script (`$ECHO_TO`), then only the translations will be shown on your screen.
+
+
 ### Configuration of the shell script
 - `LANGUAGE_CODE`    
   the language code, you will speak. It can be for example `en`, `sv` ...  
